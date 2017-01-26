@@ -4,16 +4,19 @@
   angular.module('LunchCheck', [])
   .controller('LunchCheckController', function($scope) {
     $scope.displayMessage = function() {
-      var message, style;
+      var message, style, inputStyle;
       if($scope.lunch_menu == undefined) {
         message = "Please enter data first";
-        style = {color: "red"}
+        style = {color: "red"};
+        inputStyle = {border: "1px solid red"};
       } else {
         message = splitTextAndPrintMessage($scope.lunch_menu);
-        style = {color: "green"}
+        style = {color: "green"};
+        inputStyle = {border: "1px solid green"};
       }
       $scope.message = message;
       $scope.style = style;
+      $scope.inputStyle = inputStyle;
     }
 
     function splitTextAndPrintMessage(string) {
