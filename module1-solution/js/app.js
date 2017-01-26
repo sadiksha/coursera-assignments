@@ -21,7 +21,11 @@
 
     function splitTextAndPrintMessage(string) {
       var split_array = string.split(",");
-      if(split_array.length <= 3) {
+      // filter method removes the empty element from an array.
+      // at the end the ['food', 'drinks',,'snacks'] becomes
+      // ['food', 'drinks', 'snacks']
+      var clean_array = split_array.filter(element=>element!='');
+      if(clean_array.length <= 3) {
         return "Enjoy!";
       }else {
         return "Too much!";
