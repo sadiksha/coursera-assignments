@@ -28,11 +28,13 @@
 
   ToBuyController.$inject = ['$scope'];
   function ToBuyController($scope) {
-    $scope.toBuyItems = toBuyItems;
+    var toBuy = this;
+    toBuy.items = toBuyItems;
   }
 
   AlreadyBoughtController.$inject = ['$scope'];
   function AlreadyBoughtController($scope) {
-    $scope.boughtItems = [];
+    var alreadyBought = this;
+    alreadyBought.items = [];
   }
 })();
