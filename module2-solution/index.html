@@ -34,21 +34,21 @@
     <div class="col-md-6" ng-controller="ToBuyController">
      <h2>To Buy:</h2>
      <ul>
-       <li ng-repeat="item in toBuy">
-         Buy {{item.quantity}} {{item.name}}
+       <li ng-repeat="toBuyItem in toBuyItems">
+         Buy {{toBuyItem.quantity}} {{toBuyItem.name}}
          <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button>
        </li>
      </ul>
-     <div class="emptyMessage">Everything is bought!</div>
+     <div class="emptyMessage" ng-show="toBuyItemList.length == 0">Everything is bought!</div>
     </div>
 
     <!-- Already Bought List -->
-    <div class="col-md-6" >
+    <div class="col-md-6" ng-controller="AlreadyBoughtController">
      <h2>Already Bought:</h2>
-     <ul>
-       <li>Bought 10 cookies</li>
+     <ul ng-show="boughtItems.length > 0">
+       <li ng-repeat="boughtItem to boughtItems">Bought {{boughtItem.quantity}} {{boughtItem.name}}</li>
      </ul>
-     <div class="emptyMessage">Nothing bought yet.</div>
+     <div class="emptyMessage" ng-show="boughtItems.length == 0">Nothing bought yet.</div>
     </div>
   </div>
 </div>
